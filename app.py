@@ -80,4 +80,3 @@ if __name__ == '__main__':
 		# waitress (deployment)
 		print('Service Started Successfully')
 		serve(app, host = '0.0.0.0', port = 5050, threads = 4)
-
