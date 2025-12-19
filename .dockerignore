@@ -1,0 +1,8 @@
+calenv
+__pycache__
+**/*.pyc
+**/*.rar
+**/*.bat
+**/*.gitignore
+**/*.dockerignore
+**/*.json
