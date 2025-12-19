@@ -1,0 +1,12 @@
+{% extends 'admin_template.html' %}
+
+{% block title %}Result{% endblock %}
+
+{% block content %}
+
+<script type="text/javascript">
+	alert("{{ message }}");
+	location = "{{ url_for('admin.admin_index') }}";
+</script>
+
+{% endblock %}

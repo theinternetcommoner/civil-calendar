@@ -1,0 +1,17 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5050:5050 # host_port:container_port
+    volumes:
+      # - source(host):target(container)
+      - type: bind
+        source: 'C:\civilcal'
+        target: /calendar
+    restart: always
+    command: python app.py
+
+# docker run -d --restart always --name rtc2-1 -v C:\rtc2\instance:/rtc2/instance -p 5001:5001 theinternetcommoner/rtc2:1.0
+# docker run -d --restart always --name xxx -v c:\civilcal\calendar.db:/calendar/calendar.db -p 5050:5050 civilcalendar

@@ -1,0 +1,26 @@
+{% extends 'template.html' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+
+<div class="container">
+	<div class="container-fluid" style="max-width: 450px;">
+		<h1 style="text-align: center;">Civil Case Calendar Generator</h1>
+		<form label="Calendar Generator" action="{{ url_for('generate') }}" method="POST" target="_blank" class="form-control">
+			<div class="mb-3">
+				<label for="SelectDate" class="form-label">Select Date</label>
+				<input type="date" class="form-control" name="hearing_date" required>
+				<br>
+				<label for="caltime" class="form-label">Calendar Time</label>
+				<select name="time" class="form-control" placeholder="Calendar Time">
+					<option value ="">--Time--</option>
+					<option value ="8:30 AM">8:30 AM</option>
+					<option value ="2:00 PM">2:00 PM</option>
+				</select>
+			</div>
+			<button type="submit" class="btn btn-primary">Generate Calendar</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+/*
+for setting page to landscape orientation and fitting all columns to one page (50% scale)
+*/
+@media print {
+  @page {
+    size: portrait; /* Sets the page size to A4 and orientation to landscape */
+  }
+}/*
+@media print{
+	@page{
+		size: landscape;
+	}
+	html{
+		zoom: 50%;
+	}
+}*/
+
+/*for setting auto number in table columns*/
+table{
+	counter-reset: row-num 0;
+}
+
+table tr{
+	counter-increment: row-num;
+}
+
+table tr td:first-child::before{
+	content: counter(row-num);
+}

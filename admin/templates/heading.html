@@ -1,0 +1,32 @@
+{% extends 'admin_template.html' %}
+
+{% block title %}Heading Panel{% endblock %}
+
+{% block content %}
+
+<div style="text-transform: none;">
+	<table class="table">
+		<tbody>
+			{% for item in row %}
+			<tr>
+				<td style="width: auto;" align="center">
+					{{ item[1] | safe }}<br>
+					{{ item[2] | safe }}<br>
+					{{ item[3] | safe }}<br>
+					{{ item[4] | safe }}<br>
+					{{ item[5] | safe }}<br>
+					{{ item[6] | safe }}<br>
+					{{ item[7] | safe }}<br>
+					{{ item[8] | safe }}<br>
+					{{ item[9] | safe }}<br>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<br/>
+	<a class="btn btn-warning" href="{{ url_for('admin.admin_selectheading', id = item[0]) }}" role="button">Update Heading</a>
+	{% endfor %}
+	<p align="center"; style="font-family: Book Antiqua;">***nothing follows***</p>
+</div>
+
+{% endblock %}

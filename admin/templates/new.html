@@ -1,0 +1,56 @@
+{% extends 'admin_template.html' %}
+
+{% block title %}New Data{% endblock %}
+
+{% block content %}
+
+<div class="container">
+	<form class="form-fontrol" action="{{ url_for('admin.admin_insert') }}" method="POST">
+		<h2 class="text-center mb-4">New Record</h2>
+			<div class="form-group">
+				<label>Case Number</label>
+				<input type="text" class="form-control" name="case_no">
+			</div>
+			<div class="form-group">
+				<label>Case Title</label>
+				<input type="text" class="form-control" name="case_title">
+			</div>
+			<div class="form-group">
+				<label>Case Nature</label>
+				<input type="text" class="form-control" name="case_nature">
+			</div>
+			<div class="form-group">
+				<label>Petitiner's Counsel</label>
+				<input type="text" class="form-control" name="pet_atty">
+			</div>
+			<div class="form-group">
+				<label>Respondent's Counsel</label>
+				<input type="text" class="form-control" name="res_atty">
+			</div>
+			<div class="form-group">
+				<label>Hearing Time</label>
+				<select name="hearing_time" class="form-control" placeholder="Hearing Time">
+					<option value ="">--Hearing Time--</option>
+					<option value ="8:30 AM">8:30 in the Morning</option>
+					<option value ="2:00 PM">2:00 in the Afternoon</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label>Hearing Schedules</label>
+				<textarea class="form-control" name="hearing_sched"></textarea>
+			</div>
+			<div class="form-group">
+				<label>Update</label>
+				<textarea class="form-control" name="update"></textarea>
+			</div>
+			<div class="form-group">
+				<label>Status</label>
+				<input type="text" class="form-control" name="status">
+			</div>
+			<div class="form-group">
+				<input class="btn btn-warning btn-block" type="submit" value="Submit">
+			</div>
+	</form>
+</div>
+
+{% endblock %}
