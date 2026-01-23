@@ -1,6 +1,6 @@
 FROM python:3.13-alpine AS builder
 WORKDIR /calendar
-COPY ./ ./
+COPY . .
 RUN pip install -r requirements.txt
 
 FROM python:3.13-alpine AS final
