@@ -37,7 +37,29 @@
 			</div>
 			<div class="form-group">
 				<label>Hearing Schedules</label>
-				<textarea class="form-control" name="hearing_sched"></textarea>
+				<div class="input-group">
+					<input type="date" id="dateInput" class="form-control">
+      				<button class="btn btn-primary" type="button" id="addDateBtn">Add Date</button>
+				</div>
+				<textarea id="logTextarea" class="form-control" name="hearing_sched"></textarea>
+				<script>
+					const addDateBtn = document.getElementById('addDateBtn');
+					const dateInput = document.getElementById('dateInput');
+					const logTextarea = document.getElementById('logTextarea');
+
+					addDateBtn.addEventListener('click', function() {
+						const selectedDate = dateInput.value;
+
+						if (selectedDate) {
+							// Check if textarea already has content to format with a newline
+							if (logTextarea.value.trim() !== '') {
+								logTextarea.value += ', ' + selectedDate;
+							} else {
+								logTextarea.value = selectedDate;
+							}
+						}
+					});
+				</script>
 			</div>
 			<div class="form-group">
 				<label>Update</label>
